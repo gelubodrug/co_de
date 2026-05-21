@@ -1,8 +1,7 @@
 # co_de
 Code in Your w_AI with your cli tools. One native workspace.
 
-# CO_DE — Releases
-
+CO_DE — Releases
 Public download mirror for the CO_DE app. Source code is private.
 
 ## License
@@ -11,3 +10,6 @@ Public download mirror for the CO_DE app. Source code is private.
 Personal use of the downloaded binary is permitted.
 Redistribution, decompilation, or commercial repackaging is not.
 No warranty.
+
+Contact:
+gelubodrug@gmail.com
