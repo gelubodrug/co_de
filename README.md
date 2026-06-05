@@ -19,15 +19,16 @@ Direct link:
 ### Install
 
 1. Open the downloaded `CO_DE.dmg`.
-2. Drag **CO_DE.app** to the **Applications** folder.
-3. Double-click **Trust CO_DE.command** (inside the same DMG window) —
-   this removes the macOS Gatekeeper quarantine flag so the app can
-   actually launch. The app is signed ad-hoc but not with an Apple
-   Developer ID, so macOS would otherwise refuse to open it with a
-   misleading "is damaged" message.
-4. Launch CO_DE from Applications.
+2. **Drag CO_DE into Applications** (step 1 in the install window).
+3. **Double-click "Trust CO_DE"** (step 2 in the same window). If macOS
+   asks "are you sure?", click **Open** — it clears the Gatekeeper
+   quarantine flag and launches CO_DE for you.
 
-You can also run the quarantine-removal command manually in Terminal:
+CO_DE is signed ad-hoc but not with an Apple Developer ID, so without
+step 3 macOS refuses to open it with a misleading "is damaged" message.
+
+Prefer to do it yourself? Either right-click **CO_DE.app** in Applications
+→ **Open** → **Open**, or run in Terminal:
 ```bash
 xattr -dr com.apple.quarantine /Applications/CO_DE.app
 ```
