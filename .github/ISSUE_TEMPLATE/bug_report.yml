@@ -1,0 +1,31 @@
+name: "🐛 Bug report"
+description: Something in CO_DE is broken or behaves wrong.
+labels: ["bug"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What did you do, what did you expect, what happened instead?
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: CO_DE version
+      description: The version shown in the bottom-right footer (e.g. v0.1.33m).
+      placeholder: v0.1.33m
+    validations:
+      required: true
+  - type: input
+    id: macos
+    attributes:
+      label: macOS version
+      placeholder: "e.g. 15.1 (Apple Silicon)"
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Anything else? (screenshots, terminal output, which agents/models)
+      description: Optional but very helpful. Redact anything private.

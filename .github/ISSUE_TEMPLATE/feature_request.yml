@@ -1,0 +1,17 @@
+name: "✨ Feature request"
+description: An idea or improvement for CO_DE. Yes — features are welcome here.
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What would you like CO_DE to do?
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why? What are you trying to accomplish?
+      description: The problem behind the request helps more than a proposed solution.
+    validations:
+      required: true
