@@ -60,6 +60,11 @@ or pop one *out* of the app onto a second monitor.
 - **Have the hardware?** Work entirely free with Qwen3.6-35B at 109 tok/s as
   a coder or assistant — in Pi, opencode, or session chat. The premium
   native-chat feel, on your own machine.
+- **Real VS Code extension chats** — Claude, Codex, and Kimi Code run as their
+  actual VS Code extensions, always the latest version — not a stale fork.
+- **Never touch a port number.** Config scares you off? Press the ✨ assistant
+  button and a CLI verifies, installs, and configures your local server for
+  you — all in one pane. You just ask.
 
 ## What makes it different
 
