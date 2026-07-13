@@ -43,6 +43,24 @@ workspace; workers still execute through their real CLI runtimes.
 
 ---
 
+## One desk for everything you code with
+
+Tired of chasing CLIs, browsers and terminals across Spaces? They live in one
+place now — virtual desks you arrange your way: hide, show, rearrange panes,
+or pop one *out* of the app onto a second monitor.
+
+- **Notes and a to-do list live in the repo** — each project's, scoped to
+  that project, not scattered across apps.
+- **Multi-repo, multi-branch, multi-CLI, multi-desk — one session chat, one
+  orchestrator.** Load several projects and balance your token spend across
+  them (Codex, Pi, Claude, or a local model), all in one place.
+- **Don't feel like writing a good prompt?** Tell your assistant "run a quick
+  entry-points audit with Sonnet" — it launches the CLI and hands it a clean,
+  well-formed prompt for you.
+- **Have the hardware?** Work entirely free with Qwen3.6-35B at 109 tok/s as
+  a coder or assistant — in Pi, opencode, or session chat. The premium
+  native-chat feel, on your own machine.
+
 ## What makes it different
 
 **1 · Coordination is off the meter — and not slow.**
@@ -97,6 +115,13 @@ CO_DE's coordinator runs on **[Pi](https://pi.dev)** — Mario Zechner's
 open-source (MIT) agent harness. CO_DE didn't reinvent the agent loop; it
 wired a local model into a solid one and built the desk, the fleet roster,
 and the cross-repo dispatch around it. Thanks, Mario.
+
+## Why I made it
+
+If you code solo, this is your desk. I made it for myself — not to burn
+tokens fast, but to save them: premium and local work balanced, all your
+projects in one organized place, packed with the premium features you'd
+expect. Free, and always will be — no \$20/mo. Try it. Like it or hate it.
 
 ## Feedback
 
