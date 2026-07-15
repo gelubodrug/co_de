@@ -8,6 +8,9 @@ local **macOS** workspace: sessions and desks, a git worktree per agent,
 worker state, reports, and live feeds in one place — instead of scattered
 terminals with fragmented context.
 
+Local models live here too — running inside CLIs like Pi and opencode, or in
+the orchestrator seat of the native chat.
+
 **Now that workspace has a dedicated orchestrator seat — and you choose
 who sits in it:**
 
