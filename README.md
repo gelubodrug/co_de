@@ -8,6 +8,12 @@ local **macOS** workspace: sessions and desks, a git worktree per agent,
 worker state, reports, and live feeds in one place — instead of scattered
 terminals with fragmented context.
 
+![CO_DE native workspace with local servers, model providers, and the official Claude Code extension](./media/co_de-native-workspace.png)
+
+*Local llama.cpp and Ollama servers, the model/provider roster, and the real
+Claude Code VS Code extension in the same native workspace. Codex and Kimi Code
+extensions are supported through the same managed VS Code integration.*
+
 Local models live here too — running inside CLIs like Pi and opencode, or in
 the orchestrator seat of the native chat.
 
