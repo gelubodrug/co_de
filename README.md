@@ -8,11 +8,10 @@ local **macOS** workspace: sessions and desks, a git worktree per agent,
 worker state, reports, and live feeds in one place — instead of scattered
 terminals with fragmented context.
 
-![CO_DE native workspace with local servers, model providers, and the official Claude Code extension](./media/co_de-native-workspace.png)
+![CO_DE workspace running Claude Code, opencode, Cursor Agent, Pi, Gemini, a local llama.cpp model, and remote orchestration](./media/co_de-agent-workspace.png)
 
-*Local llama.cpp and Ollama servers, the model/provider roster, and the real
-Claude Code VS Code extension in the same native workspace. Codex and Kimi Code
-extensions are supported through the same managed VS Code integration.*
+*One live workspace: multiple repositories and branches, native coding CLIs,
+local models, agent state, reports, and the experimental Telegram remote.*
 
 Local models live here too — running inside CLIs like Pi and opencode, or in
 the orchestrator seat of the native chat.
@@ -74,6 +73,14 @@ or pop one *out* of the app onto a second monitor.
 - **Never touch a port number.** Config scares you off? Press the ✨ assistant
   button and a CLI verifies, installs, and configures your local server for
   you — all in one pane. You just ask.
+
+### Official VS Code extensions, inside CO_DE
+
+![CO_DE Native Extensions with Claude Code, Codex, and Kimi Code](./media/co_de-native-extensions.png)
+
+These are the official Claude Code, Codex, and Kimi Code extensions running in
+CO_DE's managed VS Code environment — their real interfaces, authentication,
+updates, and capabilities, not reimplemented chat lookalikes.
 
 ## What makes it different
 
