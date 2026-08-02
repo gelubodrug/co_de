@@ -2,151 +2,213 @@
 
 **Your AI tools. One native workspace.**
 
-Claude Code, Codex, opencode, Gemini (Antigravity), Cursor Agent, Droid —
-side by side with your browser, terminals, and notes, in one structured
-local **macOS** workspace: sessions and desks, a git worktree per agent,
-worker state, reports, and live feeds in one place — instead of scattered
-terminals with fragmented context.
+Run the coding tools you already use in one macOS workspace, while a coordinator sits above them, assigns work, keeps context, and reports the result.
 
-![CO_DE workspace running Claude Code, opencode, Cursor Agent, Pi, Gemini, a local llama.cpp model, and remote orchestration](./media/co_de-agent-workspace.png)
+Not another AI chat.
 
-*One live workspace: multiple repositories and branches, native coding CLIs,
-local models, agent state, reports, and the experimental Telegram remote.*
+Not another API bill.
 
-Local models live here too — running inside CLIs like Pi and opencode, or in
-the orchestrator seat of the native chat.
+Just the subscriptions and CLIs you already have, working together.
 
-**Now that workspace has a dedicated orchestrator seat — and you choose
-who sits in it:**
-
-- **A local model on your own server** (llama.cpp / Ollama) — coordination
-  and supervision without spending a single API token — the only bill is
-  your own GPU. This is the setup CO_DE is built around: *your local model
-  runs the meeting; your subscriptions write the code.*
-- **A subscription you already pay** — Codex or Claude via the bundled Pi
-  runtime; no per-token bill, though it draws on that sub's usage limits.
-- **Any model behind a LiteLLM / OpenAI-compatible server** — premium API,
-  self-hosted, gateway. Your call.
-
-The orchestrator observes and coordinates the agents already living in the
-workspace; workers still execute through their real CLI runtimes.
-
-> **Your providers. Your subscriptions. Your orchestrator. No new
-> subscription required.**
+![CO_DE workspace running Claude Code, Codex, Cursor Agent, Pi, Gemini, local llama.cpp and remote orchestration](./media/co_de-agent-workspace.png)
 
 ---
 
-### Before you decide — the honest part
+# Why I built it
 
-- **Source is currently private.** One developer, not ready to maintain a
-  community fork. This public repo mirrors DMG releases with checksums.
-  Don't take my word on network behavior — run it under Little Snitch or
-  `lsof -i`: the coordinator talks to `localhost`; your worker CLIs talk to
-  their own vendors, exactly as they do without CO_DE. Tell me if you catch
-  it doing anything else.
-- **macOS arm64 only. The DMG is unsigned** — I don't pay Apple. Install is
-  one command (below). If you're cautious, run it first in a separate macOS
-  user account.
-- **Beta. One developer. It has bugs.** If something breaks, open an issue.
+Every provider keeps shipping another great model.
+
+- Claude Code
+- Codex
+- Gemini CLI
+- Cursor Agent
+- opencode
+- Kimi Code
+
+The problem isn't the models anymore.
+
+The problem is us.
+
+We constantly jump between terminals, copy conversations from one tool to another, rewrite prompts, wait for answers, summarize logs, decide who should do the next step, then repeat the process.
+
+CO_DE exists to coordinate that work.
+
+It doesn't replace the tools.
+
+It lets each one do what it already does well.
 
 ---
 
-## One desk for everything you code with
+# The idea
 
-Tired of chasing CLIs, browsers and terminals across Spaces? They live in one
-place now — virtual desks you arrange your way: hide, show, rearrange panes,
-or pop one *out* of the app onto a second monitor.
+I wanted an orchestrator with a real desktop UI that sits above the provider CLIs already running on my machine.
 
-- **Notes and a to-do list live in the repo** — each project's, scoped to
-  that project, not scattered across apps.
-- **Multi-repo, multi-branch, multi-CLI, multi-desk — one session chat, one
-  orchestrator.** Load several projects and balance your token spend across
-  them (Codex, Pi, Claude, or a local model), all in one place.
-- **Don't feel like writing a good prompt?** Tell your assistant "run a quick
-  entry-points audit with Sonnet" — it launches the CLI and hands it a clean,
-  well-formed prompt for you.
-- **Have the hardware?** Work entirely free with Qwen3.6-35B at 109 tok/s as
-  a coder or assistant — in Pi, opencode, or session chat. The premium
-  native-chat feel, on your own machine.
-- **Real VS Code extension chats** — Claude, Codex, and Kimi Code run as their
-  actual VS Code extensions, always the latest version — not a stale fork.
-- **Never touch a port number.** Config scares you off? Press the ✨ assistant
-  button and a CLI verifies, installs, and configures your local server for
-  you — all in one pane. You just ask.
+Not another orchestration platform that replaces everything with expensive headless APIs.
 
-### Official VS Code extensions, inside CO_DE
+I already pay for subscriptions.
 
-![CO_DE Native Extensions with Claude Code, Codex, and Kimi Code](./media/co_de-native-extensions.png)
+I wanted to use them.
 
-These are the official Claude Code, Codex, and Kimi Code extensions running in
-CO_DE's managed VS Code environment — their real interfaces, authentication,
-updates, and capabilities, not reimplemented chat lookalikes.
+Workers stay exactly where they belong—in their own terminals, using their own authentication, exactly as their creators intended.
 
-## What makes it different
+The coordinator simply decides who should do what, keeps track of the work, and reports back.
 
-**1 · Coordination is off the meter — and not slow.**
-Run the coordinator on a local model and orchestration bills zero per-token
-and never touches the rate limits your workers need. And "local" isn't slow
-here: MTP speculative decoding runs Qwen3.6-35B at 109 tok/s, 100% draft
-acceptance. Coordination is dispatch and tracking, not deep reasoning — the
-local brain keeps up.
+---
 
-**2 · Blocked workers ask a local brain, not your phone at 2am.**
-A stuck worker doesn't sit silent and doesn't guess — it asks the
-coordinator mid-task and gets the answer injected into its own terminal, and
-continues. No human in the loop, no paid tokens spent on the answer.
+# Why local models changed everything
 
-**3 · Cross-repo dispatch.**
-From repo A, tell the coordinator to work in repo B. It mounts the repo, the
-task travels, workers spawn there — worktrees aren't a cage.
+Originally I assumed the coordinator would also have to be a cloud model.
 
-Below the fold: Claude Code + Codex as native first-class agents · local
-coder CLIs (opencode / goose / droid / qwen) on your local model as cheap
-triage before paid tokens touch a problem · worker reports come back
-*rendered* in chat, not dumped · A|B adversarial planning at zero API tokens ·
-worker CLIs resume their own sessions across restarts · **Telegram remote
-(experimental)** — drive the orchestrator from your phone; still rough, gets
-refined once the core loop is bullet-proof.
+That stopped making sense.
 
-## Download
+Modern local models are now perfectly capable of orchestrating work.
 
-**macOS — Apple Silicon (13+):** [CO_DE.dmg](./CO_DE.dmg)
+They read a messy human request.
 
-### Install (unsigned build)
+Turn it into an execution plan.
 
-```sh
-# after dragging CO_DE into /Applications:
+Coordinate multiple workers.
+
+Keep track of context.
+
+Collect results.
+
+Return a concise report.
+
+That's an ideal orchestration workload.
+
+Cloud models spend their tokens solving the actual engineering problems.
+
+The local model spends almost nothing deciding who should solve them.
+
+That saves both money and context.
+
+---
+
+# What CO_DE does
+
+- Uses your existing subscriptions instead of replacing them.
+- Runs the real provider CLIs in their own terminals.
+- Supports local models through **llama.cpp** or **Ollama**.
+- Supports OpenAI-compatible endpoints through **LiteLLM**.
+- Gives every worker its own Git worktree.
+- Coordinates work across multiple repositories.
+- Lets blocked workers ask the coordinator instead of waiting for you.
+- Returns structured reports instead of dumping terminal output.
+- Includes experimental Telegram remote control.
+
+![The official Claude Code, Codex and Kimi Code extensions running inside CO_DE](./media/co_de-native-extensions.png)
+
+---
+
+# Workers stay real
+
+CO_DE never pretends to be Claude Code.
+
+Or Codex.
+
+Or Cursor Agent.
+
+Or Gemini CLI.
+
+It launches the real tools.
+
+The official CLIs.
+
+The official VS Code extensions.
+
+Their own authentication.
+
+Their own terminals.
+
+Their own capabilities.
+
+The orchestrator simply coordinates them.
+
+---
+
+# Why this approach
+
+Different models are good at different things.
+
+Some write code faster.
+
+Some review better.
+
+Some plan better.
+
+Some are cheaper.
+
+Some are local.
+
+CO_DE lets you mix all of them inside one workflow instead of forcing every task through the same model.
+
+**The right model.**
+
+**For the right job.**
+
+---
+
+# Download
+
+**macOS (Apple Silicon, macOS 13+)**
+
+[CO_DE.dmg](./CO_DE.dmg)
+
+After copying the application:
+
+```bash
 xattr -cr /Applications/CO_DE.app
 ```
 
-Then open it. That clears the Gatekeeper quarantine flag on an unsigned app.
+The application is currently unsigned, so this removes the Gatekeeper quarantine attribute.
 
 ## Requirements
 
-- macOS 13+ on Apple Silicon.
-- At least one coding agent CLI on your `PATH` (Claude Code, Codex,
-  opencode, Gemini CLI, Droid, Cursor Agent…). CO_DE auto-detects them.
-- A coordinator brain — any one of: a **llama.cpp / Ollama server** running a
-  local model; a **Codex/Claude subscription** (via the bundled Pi runtime);
-  or a **LiteLLM / OpenAI-compatible server** pointing at any model you like.
+You need:
 
-## Built on
+- At least one supported coding CLI installed on your machine.
+- A coordinator model:
+  - llama.cpp
+  - Ollama
+  - Codex
+  - Claude (through Pi)
+  - Any OpenAI-compatible endpoint
 
-CO_DE's coordinator runs on **[Pi](https://pi.dev)** — Mario Zechner's
-open-source (MIT) agent harness. CO_DE didn't reinvent the agent loop; it
-wired a local model into a solid one and built the desk, the fleet roster,
-and the cross-repo dispatch around it. Thanks, Mario.
+CO_DE itself does not require a subscription.
 
-## Why I made it
+---
 
-If you code solo, this is your desk. I made it for myself — not to burn
-tokens fast, but to save them: premium and local work balanced, all your
-projects in one organized place, packed with the premium features you'd
-expect. Free, and always will be — no \$20/mo. Try it. Like it or hate it.
+# Built on Pi
 
-## Feedback
+The orchestration engine runs on **Pi**, Mario Zechner's open-source (MIT) agent framework.
 
-Bugs and **feature requests** both go here:
-**[open an issue](https://github.com/gelubodrug/co_de/issues/new/choose)**
-(there's a picker — 🐛 Bug report / ✨ Feature request). One dev reads them
-all.
+I didn't reinvent the agent loop.
+
+I built a native orchestration workspace around it: multi-agent coordination, worktree management, routing, reporting, desktop UI, and cross-repository execution.
+
+Huge thanks to Mario.
+
+---
+
+# Roadmap
+
+Current priorities:
+
+- Better orchestration strategies
+- More provider integrations
+- Better reporting
+- Better desktop UX
+- More autonomous workflows
+
+Everything is being developed in the open.
+
+---
+
+# Feedback
+
+Bug reports, ideas and feature requests are welcome.
+
+Open an issue:
+
+https://github.com/gelubodrug/co_de/issues/new/choose
