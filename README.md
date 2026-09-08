@@ -212,3 +212,9 @@ Bug reports, ideas and feature requests are welcome.
 Open an issue:
 
 https://github.com/gelubodrug/co_de/issues/new/choose
+
+---
+
+## License
+
+CO_DE is free to use. The app is distributed under the [End User License Agreement](./LICENSE.md); the source code is not published in this repository.
