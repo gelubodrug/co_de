@@ -173,7 +173,7 @@ After copying the application:
 xattr -cr /Applications/CO_DE.app
 ```
 
-The application is currently unsigned, so this removes the Gatekeeper quarantine attribute.
+Code signing is in progress — the Apple Developer authorization is under review, and signed builds ship the moment it clears. Until then, that one line removes the Gatekeeper quarantine attribute.
 
 ## Requirements
 
