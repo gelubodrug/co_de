@@ -20,10 +20,16 @@ Every provider keeps shipping another great model.
 
 - Claude Code
 - Codex
-- Gemini CLI
 - Cursor Agent
+- Copilot
+- Antigravity
 - opencode
 - Kimi Code
+- Aider
+- Goose
+- Droid
+- Qwen Code
+- Pi
 
 The problem isn't the models anymore.
 
@@ -88,14 +94,18 @@ That saves both money and context.
 # What CO_DE does
 
 - Uses your existing subscriptions instead of replacing them.
-- Runs the real provider CLIs in their own terminals.
-- Supports local models through **llama.cpp** or **Ollama**.
-- Supports OpenAI-compatible endpoints through **LiteLLM**.
-- Gives every worker its own Git worktree.
+- Runs the real provider CLIs in panes it owns, with live status read from each vendor's own session state instead of guessed from terminal output.
+- Lets you choose the coordinator seat: a local model, the **Claude Code** CLI, or the **Codex** CLI — each with your own login.
+- Supports local models through **llama.cpp**, **Ollama** or **MLX**, and any OpenAI-compatible endpoint (**LiteLLM**, **OpenRouter**, your own server).
+- Gives local models real tools: native function calling, web search and page fetch, in both Chat and Coder.
+- Gives every worker its own Git worktree, and merges back through a reconcile step that stops at an integration branch — your main branch moves only when you press *Promote*.
 - Coordinates work across multiple repositories.
+- Keeps the record as files in your repo: a task ledger of notes, tasks and worker reports, plus an append-only Spec Kit journal per spec.
+- Pulls **Linear** issues into the Tasks tab and writes the result back — state, the commits that mention the issue, and the report.
+- Runs the official **VS Code extensions** (Claude Code, Kimi Code) inside a managed editor, and browser panes a worker can drive.
+- Exposes the same state and the same actions over **MCP**, so an external CLI can take the coordinator seat headless.
 - Lets blocked workers ask the coordinator instead of waiting for you.
 - Returns structured reports instead of dumping terminal output.
-- Includes experimental Telegram remote control.
 
 ![The official Claude Code, Codex and Kimi Code extensions running inside CO_DE](./media/co_de-native-extensions.png)
 
@@ -153,7 +163,7 @@ CO_DE lets you mix all of them inside one workflow instead of forcing every task
 
 **macOS (Apple Silicon, macOS 13+)**
 
-[CO_DE.dmg](./CO_DE.dmg)
+[CO_DE.dmg](./CO_DE.dmg) — always the latest build. Older builds and notes: [Releases](https://github.com/gelubodrug/co_de/releases).
 
 After copying the application:
 
@@ -168,12 +178,11 @@ The application is currently unsigned, so this removes the Gatekeeper quarantine
 You need:
 
 - At least one supported coding CLI installed on your machine.
-- A coordinator model:
-  - llama.cpp
-  - Ollama
-  - Codex
-  - Claude (through Pi)
-  - Any OpenAI-compatible endpoint
+- A coordinator model, one of:
+  - a local model through llama.cpp, Ollama or MLX
+  - any OpenAI-compatible endpoint (LiteLLM, OpenRouter, your own server)
+  - the Claude Code CLI, with your own login
+  - the Codex CLI, with your own login
 
 CO_DE itself does not require a subscription.
 
