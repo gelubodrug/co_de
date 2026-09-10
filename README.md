@@ -98,6 +98,8 @@ That saves both money and context.
 - Lets you choose the coordinator seat: a local model, the **Claude Code** CLI, or the **Codex** CLI — each with your own login.
 - Supports local models through **llama.cpp**, **Ollama** or **MLX**, and any OpenAI-compatible endpoint (**LiteLLM**, **OpenRouter**, your own server).
 - Gives local models real tools: native function calling, web search and page fetch, in both Chat and Coder.
+- **Design mode**: in a browser pane, click any element on the page and leave a note on it. You get the component, the source `file:line` when it's your own dev build, the element's styles and DOM path, a picture of just that element, and your sentence — on the clipboard, one paste, as many notes as you took.
+- Asks each CLI what models it actually has instead of shipping a list that goes stale — one Refresh and new models appear in every picker.
 - Gives every worker its own Git worktree, and merges back through a reconcile step that stops at an integration branch — your main branch moves only when you press *Promote*.
 - Coordinates work across multiple repositories.
 - Keeps several **sessions** side by side — each one a repo with its own workers, chats, tasks and reports — and switches between them without tearing anything down.
