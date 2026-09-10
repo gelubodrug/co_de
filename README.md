@@ -100,14 +100,16 @@ That saves both money and context.
 - Gives local models real tools: native function calling, web search and page fetch, in both Chat and Coder.
 - Gives every worker its own Git worktree, and merges back through a reconcile step that stops at an integration branch — your main branch moves only when you press *Promote*.
 - Coordinates work across multiple repositories.
-- Keeps the record as files in your repo: a task ledger of notes, tasks and worker reports, plus an append-only Spec Kit journal per spec.
+- Keeps several **sessions** side by side — each one a repo with its own workers, chats, tasks and reports — and switches between them without tearing anything down.
+- Runs a spec end to end in **Spec Kit mode**: constitution, specify, plan, tasks, implement, converge — one task delegated at a time, with an append-only journal per spec that the UI only ever reads.
+- Keeps the record as files in your repo: a task ledger of notes, tasks and worker reports.
 - Pulls **Linear** issues into the Tasks tab and writes the result back — state, the commits that mention the issue, and the report.
-- Runs the official **VS Code extensions** (Claude Code, Kimi Code) inside a managed editor, and browser panes a worker can drive.
+- Runs the official **VS Code extensions** — Claude Code and Kimi Code — inside a managed editor, and browser panes a worker can drive.
 - Exposes the same state and the same actions over **MCP**, so an external CLI can take the coordinator seat headless.
 - Lets blocked workers ask the coordinator instead of waiting for you.
 - Returns structured reports instead of dumping terminal output.
 
-![The official Claude Code, Codex and Kimi Code extensions running inside CO_DE](./media/co_de-native-extensions.png)
+![The official Claude Code and Kimi Code extensions running inside CO_DE](./media/co_de-native-extensions.png)
 
 ---
 
@@ -119,7 +121,7 @@ Or Codex.
 
 Or Cursor Agent.
 
-Or Gemini CLI.
+Or Kimi Code.
 
 It launches the real tools.
 
@@ -204,6 +206,7 @@ Huge thanks to Mario.
 
 Current priorities:
 
+- **Scenarios** — a node canvas where you wire the run yourself: workers, feeders, verifiers, reports and human gates, connected port to port, with the coordinator following the wiring you authored. In progress, not in the current build.
 - Better orchestration strategies
 - More provider integrations
 - Better reporting
