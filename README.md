@@ -10,6 +10,8 @@ Not another API bill.
 
 Just the subscriptions and CLIs you already have, working together.
 
+**[See it → agent-control-plane-native-webpage.vercel.app](https://agent-control-plane-native-webpage.vercel.app)** — what every tab does, and what shipped in each release.
+
 ![CO_DE workspace running Claude Code, Codex, Cursor Agent, Pi, Gemini, local llama.cpp and remote orchestration](./media/co_de-agent-workspace.png)
 
 ---
@@ -167,7 +169,7 @@ CO_DE lets you mix all of them inside one workflow instead of forcing every task
 
 **macOS (Apple Silicon, macOS 13+)**
 
-[CO_DE.dmg](./CO_DE.dmg) — always the latest build. Older builds and notes: [Releases](https://github.com/gelubodrug/co_de/releases).
+[CO_DE.dmg](./CO_DE.dmg) — always the latest build. Older builds: [Releases](https://github.com/gelubodrug/co_de/releases). What went into each one, release by release: [the site](https://agent-control-plane-native-webpage.vercel.app/#changes).
 
 After copying the application:
 
